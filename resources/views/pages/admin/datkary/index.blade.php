@@ -65,15 +65,12 @@
                   <thead class="text-center thead-dark align-middle">
                     <tr>
                       <th class="text-center">Action</th>
-                      {{-- <th>NIK</th>
-                      <th>No. Payroll</th> --}}
                       <th>Foto</th>
                       <th>Nama</th>
                       <th>Position</th>
                       <th>Level</th>
                       <th>Department</th>
                       <th>Join Date</th>
-                      {{-- <th>TTL</th> --}}
                       <th>Gender</th>
                       <th>Gol. Darah</th>
                       <th>Status</th>
@@ -98,9 +95,7 @@
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </form>
-                        </td>
-                                {{-- <td>{{ $item->nik}}</td>
-                                <td>{{ $item->no_payroll}}</td> --}}
+                                </td>
                                 <td>
                                     <img src="{{ Storage::url($item->image)}}" alt="" width="100px"
                                         class="img-thumbnail">

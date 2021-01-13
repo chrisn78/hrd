@@ -13,10 +13,14 @@ class DataKaryController extends Controller
 {
     public function index()
     {
-        $items = Karyawan::with(['data_positions'])->get();
-
+        $items = Karyawan::with(['data_positions'])
+                ->where('status_posisi','PKWT')
+                ->orWhere('status_posisi','DW')
+                ->get();
+        $item1 = 'edit';
         return view('pages.admin.datkary.index', [
-            'items' => $items
+            'items' => $items,
+            'item1' => $item1
         ]);
     }
     public function create()

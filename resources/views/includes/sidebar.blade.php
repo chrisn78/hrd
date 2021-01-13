@@ -35,7 +35,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('data_kary.index')}}">List Data Karyawan</a>
+            <a class="collapse-item" href="{{ route('data_kary.index')}}">Karyawan (Active)</a>
+            <a class="collapse-item" href="{{ route('kary_deactive.index')}}">Karyawan (Deactive)</a>
             <a class="collapse-item" href="{{ route('data-jab.index')}}">Data Jabatan</a>
           </div>
         </div>

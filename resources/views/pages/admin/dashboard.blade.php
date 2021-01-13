@@ -16,7 +16,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text font-weight-bold text-primary text-uppercase mb-1">Total Karyawan</div>
+                      <div class="text font-weight-bold text-primary text-uppercase mb-1">Total Karyawan Aktif</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $karyawan }}</div>
                     </div>
                     <div class="col-auto">
@@ -252,7 +252,6 @@
 
         <!-- Area Summary Gender -->
         <div class="row">
-            <!-- Area Chart -->
             <div class="col-xl-6 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -261,6 +260,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
+                  <div class="col-xl-8 col-lg-7">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
@@ -272,7 +272,7 @@
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$male}}</div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fa fa-mars fa-2x text-gray-500"></i>
+                                                    <i class="fa fa-male fa-2x text-gray-500"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -288,28 +288,26 @@
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$female}}</div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-venus fa-2x text-gray-500" aria-hidden="true"></i>
+                                                    <i class="fas fa-female fa-2x text-gray-500" aria-hidden="true"></i>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div id="genderchart"  style="width: 300px; height:300px;">
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>
                         </div>
                     </div>
-
+                  </div>
+                  <div class="col-xl-4 col-lg-7">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div id="genderchart"  style="width: 300px; height:300px;"></div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!-- Area Summary Gender -->
+            <!-- Area Summary Position Status -->
             <div class="col-xl-6 col-lg-7">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
@@ -318,6 +316,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
+                  <div class="col-xl-8 col-lg-7">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
@@ -329,39 +328,37 @@
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pkwt}}</div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fa fa-user-tie fa-2x text-gray-500"></i>
+                                                    <i class="fa fa-vihara fa-2x text-gray-500"></i>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
-                                    <div class="card border-left-info shadow h-100 py-2">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
+                                <div class="card border-left-info shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
                                                     <div class="text font-weight-bold text-success text-uppercase mb-1">DW</div>
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dw}}</div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-user-circle fa-2x text-gray-500" aria-hidden="true"></i>
+                                                    <i class="fa fa-vihara fa-2x text-gray-500"></i>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
-                                        <div class="card-body">
-                                            <div class="row no-gutters align-items-center">
-                                                <div id="postchart"  style="width: 300px; height:300px;">
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>
                         </div>
                     </div>
-
+                  </div>
+                  <div class="col-xl-4 col-lg-7">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div id="postchart"  style="width: 300px; height:300px;"></div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

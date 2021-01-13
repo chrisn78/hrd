@@ -30,6 +30,7 @@ Route::prefix('/')
     Route::get('/data_p_t/{id}','DataPesertaTrainController@editPeserta')->name('data_peserta_edit');
     Route::post('/data_p_t','DataPesertaTrainController@storePeserta')->name('data_peserta_store');
     Route::resource('data_train','DataTrainController');
+    Route::resource('kary_deactive','KaryDeactiveController');
     Route::resource('data-jab','DataJabController',['except'> ['show']]);
     Route::get('/kary/export_excel', 'KaryawanEIController@export_excel')->name('kary_export');
     Route::post('/kary/import_excel', 'KaryawanEIController@import_excel')->name('kary_import');

@@ -160,8 +160,8 @@
                     <div class="form-group">
                         <label for="status_kary">Status karyawan</label>
                         <br>
-                            <input type="radio"  name="status_posisi" value="PWKT" {{$item->status_posisi == "PWKT" ? 'checked="checked"' : '' }}>
-                            <label for="contactChoice1">PWKT</label>
+                            <input type="radio"  name="status_posisi" value="PKWT" {{$item->status_posisi == "PKWT" ? 'checked="checked"' : '' }}>
+                            <label for="contactChoice1">PKWT</label>
                             <input type="radio"  name="status_posisi" value="DW" {{$item->status_posisi == "DW" ? 'checked="checked"' : '' }}>
                             <label for="contactChoice2">DW</label>
                             <input type="radio"  name="status_posisi" value="Deactive" {{$item->status_posisi == "Deactive" ? 'checked="checked"' : '' }}>
