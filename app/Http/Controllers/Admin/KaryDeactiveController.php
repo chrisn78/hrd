@@ -14,9 +14,10 @@ class KaryDeactiveController extends Controller
         $items = Karyawan::with(['data_positions'])
                 ->where('status_posisi','Deactive')
                 ->get();
-
+        $title1 = 'nonaktif';
         return view('pages.admin.datkary.index', [
-            'items' => $items
+            'items' => $items,
+            'title1' => $title1
         ]);
     }
 

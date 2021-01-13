@@ -6,8 +6,13 @@
 
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
-              <h3 class="m-0 font-weight-bold text-primary">Data Karyawan</h3>
+              @if ($title1 === "aktif")
+              <h3 class="m-0 font-weight-bold text-primary">Data Karyawan Aktif</h3>
+              @else
+              <h3 class="m-0 font-weight-bold text-primary">Data Karyawan Tidak Aktif</h3>
+              @endif
               <div>
+                  @if ($title1 === "aktif")
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#importExcel">
                     <span class="icon text-white">
                       <i class="fas fa-file-import"></i>
@@ -15,6 +20,7 @@
                     &nbsp;
                     <span class="text-*-center">Import From Excel</span>
                 </button>
+                @endif
                   <a href="{{ route('kary_export')}}" class="btn btn-success">
                     <span class="icon text-white">
                       <i class="fas fa-file-export"></i>
@@ -22,6 +28,7 @@
                     &nbsp;
                     <span class="text-*-center">Export to Excel</span>
                   </a>
+                  @if ($title1 === "aktif")
                   <a href="{{ route('data_kary.create')}}" class="btn btn-primary">
                     <span class="icon text-white">
                       <i class="fas fa-plus"></i>
@@ -29,6 +36,7 @@
                     &nbsp;
                     <span class="text-*-center">Tambah Data Karyawan</span>
                   </a>
+                  @endif
               </div>
             </div>
 

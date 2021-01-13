@@ -17,10 +17,10 @@ class DataKaryController extends Controller
                 ->where('status_posisi','PKWT')
                 ->orWhere('status_posisi','DW')
                 ->get();
-        $item1 = 'edit';
+        $title1 = 'aktif';
         return view('pages.admin.datkary.index', [
             'items' => $items,
-            'item1' => $item1
+            'title1' => $title1
         ]);
     }
     public function create()

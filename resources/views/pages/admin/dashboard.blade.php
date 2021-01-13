@@ -328,7 +328,7 @@
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$pkwt}}</div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fa fa-vihara fa-2x text-gray-500"></i>
+                                                    <i class="fa fa-id-card fa-2x text-gray-500"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -343,7 +343,7 @@
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dw}}</div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fa fa-vihara fa-2x text-gray-500"></i>
+                                                    <i class="fa fa-portrait fa-2x text-gray-500"></i>
                                                 </div>
                                             </div>
                                         </div>
