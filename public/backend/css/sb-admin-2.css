@@ -1517,18 +1517,19 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #858796;
+  color: #3a3a3d;
+  text-align: center;
 }
 
 .table th,
 .table td {
   padding: 0.75rem;
-  vertical-align: top;
+  vertical-align: center;
   border-top: 1px solid #e3e6f0;
 }
 
 .table thead th {
-  vertical-align: bottom;
+  vertical-align: center;
   border-bottom: 2px solid #e3e6f0;
 }
 
@@ -1567,7 +1568,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  color: #858796;
+  color: #000000;
   background-color: rgba(0, 0, 0, 0.075);
 }
 

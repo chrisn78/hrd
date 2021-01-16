@@ -1,12 +1,41 @@
 @extends('layouts.admin')
 
 @section('content')
-            <!-- Begin Page Content -->
+        {{-- notifikasi form validasi --}}
+		@if ($errors->has('file'))
+		<span class="invalid-feedback" role="alert">
+			<strong>{{ $errors->first('file') }}</strong>
+		</span>
+		@endif
+
+		{{-- notifikasi sukses --}}
+		@if ($sukses = Session::get('sukses'))
+		<div class="alert alert-success alert-block">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<strong>{{ $sukses }}</strong>
+		</div>
+		@endif
+        <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
               <h3 class="m-0 font-weight-bold text-primary">Daftar Training</h3>
+              <div>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#importExcel">
+                    <span class="icon text-white">
+                      <i class="fas fa-file-import"></i>
+                    </span>
+                    &nbsp;
+                    <span class="text-*-center">Import Data Training</span>
+                </button>
+                <a href="{{ route('training_export')}}" class="btn btn-success">
+                    <span class="icon text-white">
+                      <i class="fas fa-file-export"></i>
+                    </span>
+                    &nbsp;
+                    <span class="text-*-center">Export to Excel</span>
+                  </a>
               <a href="{{ route('data_train.create')}}" class="btn btn-primary">
                     <span class="icon text-white">
                       <i class="fas fa-plus"></i>
@@ -14,11 +43,41 @@
                     &nbsp;
                     <span class="text-*-center">Tambah Data Training</span>
                   </a>
+                </div>
             </div>
+
+            <!-- Import Excel -->
+                <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <form method="post" action="{{ route('training_import')}}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                                </div>
+                                <div class="modal-body">
+
+                                    {{ csrf_field() }}
+
+                                    <label>Pilih file excel</label>
+                                    <div class="form-group">
+                                        <input type="file" name="file" required="required">
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger">Import</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="text-center thead-dark align-middle">
                     <tr>
                       <th class="text-center">Action</th>
                       <th>Judul Training</th>

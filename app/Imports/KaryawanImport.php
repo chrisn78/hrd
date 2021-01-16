@@ -35,7 +35,14 @@ class KaryawanImport implements ToModel
             'status_posisi' => $row[11],
             'pendidikan' => $row[12],
             'status' => $row[13],
-            'image' => $row[14]
+            'image' => $row[14],
+            'istri' => $row[15],
+            'anak' => $row[16],
+            'bpjskes' => $row[17],
+            'bpjstk' => $row[18],
+            'npwp' => $row[19],
+            'no_hp' => $row[20],
+            'no_rek' => $row[21]
         ]);
 
     }

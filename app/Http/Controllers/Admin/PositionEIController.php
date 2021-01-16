@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
+use App\Exports\PositionExport;
 use Session;
 use App\Imports\PositionImport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -10,6 +12,11 @@ use App\position;
 
 class PositionEIController extends Controller
 {
+
+    public function export_excel()
+	{
+        return Excel::download(new PositionExport, 'jabatan.xlsx');
+    }
     public function import_excel(Request $request)
 	{
 		// validasi

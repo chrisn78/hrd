@@ -30,6 +30,13 @@
                     &nbsp;
                     <span class="text-*-center">Import Excel Data</span>
                 </button>
+                <a href="{{ route('post_export')}}" class="btn btn-success">
+                    <span class="icon text-white">
+                      <i class="fas fa-file-export"></i>
+                    </span>
+                    &nbsp;
+                    <span class="text-*-center">Export to Excel</span>
+                  </a>
                   <a href="{{ route('data-jab.create')}}" class="btn btn-primary">
                     <span class="icon text-white">
                       <i class="fas fa-plus"></i>
@@ -69,8 +76,8 @@
 
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="text-center thead-dark align-middle">
                     <tr>
                       <th>No.</th>
                       <th>Position Name</th>

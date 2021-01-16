@@ -48,11 +48,13 @@
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable">
-                        <thead>
-                            {{-- <tr>
-                                 Data Peserta
-                            </tr> --}}
+                    <table class="table table-bordered table-hover" id="dataTable">
+                        <thead class="text-center thead-dark align-middle">
+                            <tr>
+                                <th colspan='4' class="h5 mb-0 font-weight-bold">
+                                 List Peserta
+                                </th>
+                            </tr>
                             <tr>
                                 <th class="text-center">Action</th>
                                 <th>Nama</th>

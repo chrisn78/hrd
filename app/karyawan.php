@@ -22,6 +22,8 @@ class karyawan extends Model
             'jenis_kel',
             'gol_darah',
             'status',
+            'istri',
+            'anak',
             'pendidikan',
             'no_hp',
             'no_rek',

@@ -103,12 +103,12 @@ class DashboardController extends Controller
             ->where('agama', 'kristen')
             ->whereNull('karyawans.deleted_at')
             ->count();
-            $sma = DB::table('karyawans')
-            ->where('pendidikan', 'sma')
+            $smp = DB::table('karyawans')
+            ->where('pendidikan', 'smp')
             ->whereNull('karyawans.deleted_at')
             ->count();
             $smk = DB::table('karyawans')
-            ->where('pendidikan', 'smk')
+            ->where('pendidikan', 'smk/sma')
             ->whereNull('karyawans.deleted_at')
             ->count();
             $d1 = DB::table('karyawans')
@@ -187,6 +187,30 @@ class DashboardController extends Controller
             ->where('status', 'K4')
             ->whereNull('karyawans.deleted_at')
             ->count();
+            $mk01 = DB::table('karyawans')
+            ->whereRaw('DATEDIFF(CURDATE(),join_date)/365 < 1')
+            ->whereNull('karyawans.deleted_at')
+            ->count();
+            $mk12 = DB::table('karyawans')
+            ->whereRaw('DATEDIFF(CURDATE(),join_date)/365 >= 1 AND DATEDIFF(CURDATE(),join_date)/365 <= 2 ')
+            ->whereNull('karyawans.deleted_at')
+            ->count();
+            $mk23 = DB::table('karyawans')
+            ->whereRaw('DATEDIFF(CURDATE(),join_date)/365 > 2 AND DATEDIFF(CURDATE(),join_date)/365 <= 3 ')
+            ->whereNull('karyawans.deleted_at')
+            ->count();
+            $mk34 = DB::table('karyawans')
+            ->whereRaw('DATEDIFF(CURDATE(),join_date)/365 > 3 AND DATEDIFF(CURDATE(),join_date)/365 <= 4 ')
+            ->whereNull('karyawans.deleted_at')
+            ->count();
+            $mk45 = DB::table('karyawans')
+            ->whereRaw('DATEDIFF(CURDATE(),join_date)/365 > 4 AND DATEDIFF(CURDATE(),join_date)/365 <= 5 ')
+            ->whereNull('karyawans.deleted_at')
+            ->count();
+            $mk5 = DB::table('karyawans')
+            ->whereRaw('DATEDIFF(CURDATE(),join_date)/365 > 5')
+            ->whereNull('karyawans.deleted_at')
+            ->count();
         return view('pages.admin.dashboard',[
             'karyawan' => karyawan::count(),
             'acc' => $acc,
@@ -209,7 +233,7 @@ class DashboardController extends Controller
             'islam' => $islam,
             'katolik' => $katolik,
             'kristen' => $kristen,
-            'sma' => $sma,
+            'smp' => $smp,
             'smk' => $smk,
             'd1' => $d1,
             'd2' => $d2,
@@ -230,6 +254,12 @@ class DashboardController extends Controller
             'k2' => $k2,
             'k3' => $k3,
             'k4' => $k4,
+            'mk01' => $mk01,
+            'mk12' => $mk12,
+            'mk23' => $mk23,
+            'mk34' => $mk34,
+            'mk45' => $mk45,
+            'mk5' => $mk5,
             ]);
     }
 }

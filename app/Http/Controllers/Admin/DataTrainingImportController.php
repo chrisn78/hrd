@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\DataTrainingExport;
 use Session;
-use App\Exports\KaryawanExport;
-use App\Imports\KaryawanImport;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\karyawan;
+use App\Imports\DataTrainingImport;
+use Maatwebsite\Excel\Facades\Excel;
 
-class KaryawanEIController extends Controller
+class DataTrainingImportController extends Controller
 {
     public function export_excel()
 	{
-        return Excel::download(new KaryawanExport, 'karyawan.xlsx');
+        return Excel::download(new DataTrainingExport, 'training.xlsx');
     }
     public function import_excel(Request $request)
 	{
@@ -30,15 +29,15 @@ class KaryawanEIController extends Controller
 		$nama_file = rand().$file->getClientOriginalName();
 
 		// upload ke folder file_siswa di dalam folder public
-		$file->move('file_kary',$nama_file);
+		$file->move('file_position',$nama_file);
 
 		// import data
-		Excel::import(new KaryawanImport, public_path('/file_kary/'.$nama_file));
+		Excel::import(new DataTrainingImport, public_path('/file_position/'.$nama_file));
 
 		// notifikasi dengan session
-		Session::flash('sukses','Data Karyawab Berhasil Diimport!');
+		Session::flash('sukses','Data Training Berhasil Diimport!');
 
 		// alihkan halaman kembali
-		return redirect()->route('data_kary.index');
+		return redirect()->route('data_train.index');
 	}
 }

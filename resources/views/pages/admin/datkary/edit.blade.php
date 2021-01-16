@@ -79,11 +79,11 @@
                     <div class="form-group">
                         <label for="agama">Agama</label>
                         <select name="agama" required class="form-control" value="{{ $item->agama}}">
-                            <option value="Buddha" {{$item->status == "Buddha" ? 'selected="selected"' : '' }}>Buddha</option>
-                            <option value="Hindu" {{$item->status == "Hindu" ? 'selected="selected"' : '' }}>Hindu</i></option>
-                            <option value="Islam" {{$item->status == "Islam" ? 'selected="selected"' : '' }}>Islam</option>
-                            <option value="Katolik" {{$item->status == "Katolik" ? 'selected="selected"' : '' }}>Katolik</option>
-                            <option value="Kristen" {{$item->status == "Kristen" ? 'selected="selected"' : '' }}>Kristen</option>
+                            <option value="BUDDHA" {{$item->agama == "BUDDHA" ? 'selected="selected"' : '' }}>Buddha</option>
+                            <option value="HINDU" {{$item->agama == "HINDU" ? 'selected="selected"' : '' }}>Hindu</i></option>
+                            <option value="ISLAM" {{$item->agama == "ISLAM" ? 'selected="selected"' : '' }}>Islam</option>
+                            <option value="KATOLIK" {{$item->agama == "KATOLIK" ? 'selected="selected"' : '' }}>Katolik</option>
+                            <option value="KRISTEN" {{$item->agama == "KRISTEN" ? 'selected="selected"' : '' }}>Kristen</option>
                         </select>
                     </div>
                      <div class="form-group">
@@ -125,10 +125,18 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="istri">Nama Istri</label>
+                        <input type="text" class="form-control" name="istri"  value="{{ $item->istri}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="anak">Nama Anak</label>
+                        <textarea name="anak" rows="5" class="d-block w-50 form-control">{{ $item->anak}}</textarea>
+                    </div>
+                    <div class="form-group">
                         <label for="pendidikan">Pendidikan</label>
                         <select name="pendidikan" required class="form-control">
-                            <option value="SMA" {{$item->pendidikan == "SMA" ? 'selected="selected"' : '' }}>SMA</option>
-                            <option value="SMK" {{$item->pendidikan == "SMK" ? 'selected="selected"' : '' }}>SMK</option>
+                            <option value="SMP" {{$item->pendidikan == "SMP" ? 'selected="selected"' : '' }}>SMP</option>
+                            <option value="SMK/SMA" {{$item->pendidikan == "SMK/SMA" ? 'selected="selected"' : '' }}>SMK/SMA</option>
                             <option value="D1" {{$item->pendidikan == "D1" ? 'selected="selected"' : '' }}>D1</option>
                             <option value="D2" {{$item->pendidikan == "D2" ? 'selected="selected"' : '' }}>D2</option>
                             <option value="D3" {{$item->pendidikan == "D3" ? 'selected="selected"' : '' }}>D3</option>

@@ -25,7 +25,7 @@
                             </th>
                         </tr>
                         <tr>
-                            <th rowspan="19" >
+                            <th rowspan="21" style="vertical-align: top">
                                 <img src="{{ Storage::url($item->image)}}" alt="" width="400px"
                                 class="img-thumbnail center" align="center">
                             </th>
@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <td>Posisi/Level</td>
-                            <td>{{ $item->data_positions->name_position}} | Level {{ $item->data_positions->level}}</td>
+                            <td>{{ $item->data_positions->name_position}} | {{ $item->data_positions->level}}</td>
                         </tr>
                         <tr>
                             <td>Basic Salary</td>
@@ -71,6 +71,21 @@
                         <tr>
                             <td>Gender/Gol.Darah/Status Pernikahan</td>
                             <td>{{ $item->jenis_kel }} / {{ $item->gol_darah }} / {{ $item->status }}</td>
+                        </tr>
+                        @if(($item->jenis_kel) == "MALE")
+                         <tr>
+                            <td>Nama Istri</td>
+                            <td>{{ $item->istri }}</td>
+                        </tr>
+                        @else
+                        <tr>
+                            <td>Nama Suami</td>
+                            <td>{{ $item->istri }}</td>
+                        </tr>
+                        @endif
+                         <tr>
+                            <td>Nama Anak</td>
+                            <td>{{ $item->anak }}</td>
                         </tr>
                         <tr>
                             <td>Pendidikan</td>

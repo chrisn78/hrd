@@ -79,8 +79,8 @@
                       <th>Level</th>
                       <th>Department</th>
                       <th>Join Date</th>
-                      <th>Gender</th>
-                      <th>Gol. Darah</th>
+                      <th>Lama bekerja</th>
+                      <th>Age</th>
                       <th>Status</th>
                       <th>Pendidikan</th>
                     </tr>
@@ -114,8 +114,8 @@
                                 <td>{{ $item->data_positions->department}}</td>
                                 <td>{{ date('d-m-Y', strtotime($item->join_date))}}</td>
                                 {{-- <td>{{ $item->tempat_lahir}}, {{ date('d-m-Y', strtotime($item->tgl_lahir))}}</td> --}}
-                                <td>{{ $item->jenis_kel}}</td>
-                                <td>{{ $item->gol_darah}}</td>
+                                <td>{{ $diff = Carbon\Carbon::parse($item->join_date)->longAbsoluteDiffForHumans(Carbon\Carbon::now())}}</td>
+                                <td>{{ $diff = Carbon\Carbon::parse($item->tgl_lahir)->longAbsoluteDiffForHumans(Carbon\Carbon::now())}}</td>
                                 <td>{{ $item->status}}</td>
                                 <td>{{ $item->pendidikan}}</td>
                                 </tr>

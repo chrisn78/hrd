@@ -34,7 +34,10 @@ Route::prefix('/')
     Route::resource('data-jab','DataJabController',['except'> ['show']]);
     Route::get('/kary/export_excel', 'KaryawanEIController@export_excel')->name('kary_export');
     Route::post('/kary/import_excel', 'KaryawanEIController@import_excel')->name('kary_import');
-    Route::post('/post/import_excel', 'PositionEIController@import_excel')->name('post_import');;
+    Route::post('/post/import_excel', 'PositionEIController@import_excel')->name('post_import');
+    Route::get('/post/export_excel', 'PositionEIController@export_excel')->name('post_export');
+    Route::post('/training/import_excel', 'DataTrainingImportController@import_excel')->name('training_import');
+    Route::get('/training/export_excel', 'DataTrainingImportController@export_excel')->name('training_export');
     Route::get('deptchart', 'EchartController@deptchart')->name('deptchart');;;
     // Route::resource('data-user','DataUserController@index');
 });

@@ -78,11 +78,11 @@
                         <label for="agama">Agama</label>
                         <select name="agama" required class="form-control" value="{{ old('agama')}}">
                             <option value="">Pilih Agama</option>
-                            <option value="Buddha">Buddha</option>
-                            <option value="Hindu">Hindu</i></option>
-                            <option value="Islam">Islam</option>
-                            <option value="Katolik">Katolik</option>
-                            <option value="Kristen">Kristen</option>
+                            <option value="BUDDHA">Buddha</option>
+                            <option value="HINDU">Hindu</i></option>
+                            <option value="ISLAM">Islam</option>
+                            <option value="KATOLIK">Katolik</option>
+                            <option value="KRISTEN">Kristen</option>
                         </select>
                     </div>
                      <div class="form-group">
@@ -126,12 +126,20 @@
                             <option value="K5">K5 (Menikah Anak 5)</option>
                         </select>
                     </div>
+                     <div class="form-group">
+                        <label for="istri">Nama Istri</label>
+                        <input type="text" class="form-control" name="istri"  value="{{ old('istri')}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="anak">Nama Anak</label>
+                        <textarea name="anak" rows="5" class="d-block w-50 form-control">{{ old('anak')}}</textarea>
+                    </div>
                     <div class="form-group">
                         <label for="pendidikan">Pendidikan</label>
                         <select name="pendidikan" required class="form-control" value="{{ old('pendidikan')}}">
                             <option value="">Pilih Pendidikan</option>
-                            <option value="SMA" selected="selected">SMA</option>
-                            <option value="SMK">SMK</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMK/SMA" selected="selected">SMK/SMA</option>
                             <option value="D1">D1</option>
                             <option value="D2">D2</option>
                             <option value="D3">D3</option>

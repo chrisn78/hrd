@@ -34,221 +34,554 @@
           </div> --}}
           <!-- Content Row -->
 
+        {{-- <div class="row">
+                <!-- Area Chart -->
+                <div class="col-xl-7 col-lg-7">
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Total By Department</h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Front Office</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fo}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fa fa-key fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">F&B Service</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fbs}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-cocktail fa-2x text-gray-500" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
 
 
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">F&B Product</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fbp}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-hamburger fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
 
-          <!-- Content Row -->
 
-          <div class="row">
-            <!-- Area Chart -->
-            <div class="col-xl-7 col-lg-7">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Accounting</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$acc}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-balance-scale fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Human Resource</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$hr}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-users-cog fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Engineering</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$eng}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-cogs fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Sales & Marketing</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$sm}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-search-dollar fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Housekeeping</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$hk}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-broom fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">SPA & Recreation</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$spa}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-spa fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text font-weight-bold text-success text-uppercase mb-1">Laundry</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$ldy}}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="fas fa-tshirt fa-2x text-gray-500"></i>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text font-weight-bold text-success text-uppercase mb-1">Security</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$sct}}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="fas fa-user-shield fa-2x text-gray-500"></i>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+                        <!-- Pie Chart -->
+                <div class="col-xl-5 col-lg-5">
+                    <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Total By Department</h6>
+                            </div>
+                            <!-- Card Body -->
+                                <div id="donutchart" class="card-body ml-1" style="width: auto; height: 500px;">
+                                </div>
+                    </div>
+                </div>
+        </div> --}}
+
+
+        <!-- Area Summary Total By Dept -->
+        <div class="row">
+            <div class="col-xl col-lg">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Total By Department</h6>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">Front Office</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fo}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fa fa-key fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">F&B Service</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fbs}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-cocktail fa-2x text-gray-500" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">F&B Product</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fbp}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-hamburger fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">Accounting</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$acc}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-balance-scale fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">Human Resource</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$hr}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-users-cog fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">Engineering</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$eng}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-cogs fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">Sales & Marketing</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$sm}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-search-dollar fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">Housekeeping</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$hk}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-broom fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text font-weight-bold text-success text-uppercase mb-1">SPA & Recreation</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$spa}}</div>
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-spa fa-2x text-gray-500"></i>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
+                  <div class="col-xl-9 col-lg-7">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                <div class="text font-weight-bold text-success text-uppercase mb-1">Laundry</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$ldy}}</div>
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Front Office</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fo}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fas fa-tshirt fa-2x text-gray-500"></i>
+                                <i class="fa fa-key fa-2x text-gray-500"></i>
                                 </div>
                             </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
 
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                <div class="text font-weight-bold text-success text-uppercase mb-1">Security</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$sct}}</div>
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">F&B Service</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fbs}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fas fa-user-shield fa-2x text-gray-500"></i>
+                                <i class="fas fa-cocktail fa-2x text-gray-500" aria-hidden="true"></i>
                                 </div>
                             </div>
                             </div>
                         </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">F&B Product</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$fbp}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-hamburger fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Accounting</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$acc}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-balance-scale fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Human Resource</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$hr}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-users-cog fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Engineering</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$eng}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-cogs fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Sales & Marketing</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$sm}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-search-dollar fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Housekeeping</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$hk}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-broom fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">SPA & Recreation</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$spa}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-spa fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text font-weight-bold text-success text-uppercase mb-1">Laundry</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$ldy}}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="fas fa-tshirt fa-2x text-gray-500"></i>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                    <div class="text font-weight-bold text-success text-uppercase mb-1">Security</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$sct}}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                    <i class="fas fa-user-shield fa-2x text-gray-500"></i>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-7">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div id="deptchart"  style="width: 400px; height:400px;"></div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
         </div>
-    </div>
 
-                    <!-- Pie Chart -->
-            <div class="col-xl-5 col-lg-5">
-                <div class="card shadow mb-4">
-                        <!-- Card Header - Dropdown -->
-                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Total By Department</h6>
-                        </div>
-                        <!-- Card Body -->
-                            <div id="donutchart" class="card-body ml-1" style="width: auto; height: 500px;">
-                            </div>
+        <!-- Area Summary Total By Masa Kerja -->
+        <div class="row">
+            <div class="col-xl col-lg">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Total By length Of Service</h6>
                 </div>
+                <!-- Card Body -->
+                <div class="row">
+                  <div class="col-xl-9 col-lg-7">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Masa Kerja < 1 Tahun</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk01}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fa fa-key fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Masa Kerja 1-2 Tahun</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk12}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-cocktail fa-2x text-gray-500" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Masa Kerja 2-3 Tahun</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk23}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-hamburger fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Masa Kerja 3-4 Tahun</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk34}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-balance-scale fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Masa Kerja 4-5 Tahun</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk45}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-users-cog fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text font-weight-bold text-success text-uppercase mb-1">Masa Kerja > 5 Tahun</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk5}}</div>
+                                </div>
+                                <div class="col-auto">
+                                <i class="fas fa-cogs fa-2x text-gray-500"></i>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-7">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div id="mkchart"  style="width: 400px; height:400px;"></div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-    </div>
+        </div>
+
 
         <!-- Area Summary Gender -->
         <div class="row">
@@ -382,8 +715,8 @@
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
-                                                    <div class="text font-weight-bold text-success text-uppercase mb-1">SMA</div>
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$sma}}</div>
+                                                    <div class="text font-weight-bold text-success text-uppercase mb-1">SMP</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$smp}}</div>
                                                 </div>
                                                 <div class="col-auto">
                                                     <i class="fa fa-school fa-2x text-gray-500"></i>
@@ -398,7 +731,7 @@
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
-                                                    <div class="text font-weight-bold text-success text-uppercase mb-1">SMK</div>
+                                                    <div class="text font-weight-bold text-success text-uppercase mb-1">SMK/SMA</div>
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$smk}}</div>
                                                 </div>
                                                 <div class="col-auto">
@@ -506,7 +839,7 @@
                   <div class="col-xl-4 col-lg-7">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div id="educhart"  style="width: 300px; height:300px;"></div>
+                            <div id="educhart"  style="width: 250px; height:300px;"></div>
                         </div>
                     </div>
                   </div>
@@ -891,11 +1224,39 @@
           ['Housekeeping',    {{$hk}}]
         ]);
 
-        var options = {
-            title: '% Total Karyawan (Dept)'
+        var options = {'title': '% Total By Department',
+               'width': 300,
+               'height': 400,
+               'chartArea': {'width': '100%', 'height': '80%'},
+               'legend': {'position': 'bottom'}
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var chart = new google.visualization.PieChart(document.getElementById('deptchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Length Of Service', 'Total'],
+          ['< 1 Tahun', {{$mk01}}],
+          ['1-2 Tahun',      {{$mk12}}],
+          ['2-3 Tahun',  {{$mk23}}],
+          ['3-4 Tahun',  {{$mk34}}],
+          ['4-5 Tahun', {{$mk45}}],
+          ['> 5 Tahun',    {{$mk5}}],
+        ]);
+
+        var options = {'title': '% Total By Length of Service',
+               'width': 300,
+               'height': 400,
+               'chartArea': {'width': '100%', 'height': '80%'},
+               'legend': {'position': 'bottom'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('mkchart'));
         chart.draw(data, options);
       }
     </script>
@@ -947,8 +1308,8 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Position Status', 'Total'],
-          ['SMA', {{$sma}}],
-          ['SMK',  {{$smk}}],
+          ['SMP', {{$smp}}],
+          ['SMK/SMA',  {{$smk}}],
           ['D1', {{$d1}}],
           ['D2',  {{$d2}}],
           ['D3', {{$d3}}],
