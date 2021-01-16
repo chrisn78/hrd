@@ -26,17 +26,11 @@ class KaryawanEIController extends Controller
 		// menangkap file excel
 		$file = $request->file('file');
 
-		// membuat nama file unik
-		$nama_file = rand().$file->getClientOriginalName();
-
-		// upload ke folder file_siswa di dalam folder public
-		$file->move('file_kary',$nama_file);
-
 		// import data
-		Excel::import(new KaryawanImport, public_path('/file_kary/'.$nama_file));
+		Excel::import(new KaryawanImport, $file);
 
 		// notifikasi dengan session
-		Session::flash('sukses','Data Karyawab Berhasil Diimport!');
+		Session::flash('sukses','Data Karyawan Berhasil Diimport!');
 
 		// alihkan halaman kembali
 		return redirect()->route('data_kary.index');

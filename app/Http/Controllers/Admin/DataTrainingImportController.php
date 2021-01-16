@@ -25,14 +25,8 @@ class DataTrainingImportController extends Controller
 		// menangkap file excel
 		$file = $request->file('file');
 
-		// membuat nama file unik
-		$nama_file = rand().$file->getClientOriginalName();
-
-		// upload ke folder file_siswa di dalam folder public
-		$file->move('file_position',$nama_file);
-
 		// import data
-		Excel::import(new DataTrainingImport, public_path('/file_position/'.$nama_file));
+		Excel::import(new DataTrainingImport, $file);
 
 		// notifikasi dengan session
 		Session::flash('sukses','Data Training Berhasil Diimport!');
