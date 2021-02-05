@@ -13,13 +13,13 @@ class CreateTrainingDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('training_details', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('id_training');
-            $table->string('id_kary');
-            $table->softDeletes();
-            $table->timestamps();
-        });
+        // Schema::create('training_details', function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->string('id_training');
+        //     $table->string('id_kary');
+        //     $table->softDeletes();
+        //     $table->timestamps();
+        // });
     }
 
     /**

@@ -5,7 +5,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Data Training</h1>
+            <h1 class="h3 mb-0 text-gray-800">Edit Data Training</h1>
           </div>
 
          @if (count($errors) > 0)
@@ -24,23 +24,23 @@
                     @method('PUT')
                     @csrf
                     <div class="form-group">
-                        <label for="title">Judul Training</label>
+                        <label for="title" style="font-weight: bolder">Title of Training</label>
                         <input type="text" class="form-control" name="judul_training" value="{{ $item->judul_training}}">
                     </div>
                     <div class="form-group">
-                        <label for="base_salary"> Speaker </label>
+                        <label for="base_salary" style="font-weight: bolder"> Speaker </label>
                         <input type="text" class="form-control" name="speaker" value="{{ $item->speaker}}">
                     </div>
                     <div class="form-group">
-                        <label for="base_salary"> Tanggal Training </label>
+                        <label for="base_salary" style="font-weight: bolder"> Date of Training </label>
                         <input type="date" class="form-control" name="tgl_train" value="{{ $item->tgl_train}}">
                     </div>
                     <div class="form-group">
-                        <label for="remark">Start</label>
+                        <label for="remark" style="font-weight: bolder">Start</label>
                         <input type="time" class="form-control" name="start" value="{{ $item->start}}">
                     </div>
                     <div class="form-group">
-                        <label for="remark">Finish</label>
+                        <label for="remark" style="font-weight: bolder">Finish</label>
                         <input type="time" class="form-control" name="finish" value="{{ $item->finish}}">
                     </div>
                     <div class="form-group">

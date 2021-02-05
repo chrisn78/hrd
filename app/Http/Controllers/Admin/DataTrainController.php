@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\training;
+use App\activitylog;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use App\DataKaryawan;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\DataTrainRequest;
@@ -38,13 +39,25 @@ class DataTrainController extends Controller
         $data = $request->all();
         $finish = Carbon::parse($request->finish);
         $start = Carbon::parse($request->start);
+        $datetrain = Carbon::parse($request->tgl_train)->format('d F Y');
+        $log = new activitylog();
+        $log->nama_user = Auth::user()->info_kary->nama_kary;
+        $log->dept = Auth::user()->info_kary->data_positions->department;
+        $log->roles = Auth::user()->roles;
+        $log->action = "Add Training";
+        $log->description = "Add Data Training : '$request->judul_training' , Speaker : '$request->speaker' , 'Tanggal $datetrain' ";
+        $log->save();
         $duration =  $start->diff($finish);
         $data['duration'] = $duration->format('%H:%i');
         $data['start'] = $start;
         $data['finish'] = $finish;
 
         Training::create($data);
-        return redirect()->route('data_train.index');
+        if($request->button == 'exit'){
+            return redirect()->route('data_train.index');
+        }else{
+            return redirect()->route('data_train.create');
+        }
     }
     public function edit($id)
     {
@@ -64,6 +77,65 @@ class DataTrainController extends Controller
         $data['start'] = $start;
         $data['finish'] = $finish;
 
+        $train = training::FindOrFail($id);
+        $datetrain = Carbon::parse($request->tgl_train)->format('d F Y');
+        $start1 = Carbon::parse($request->start)->format('H:i:s');
+        $finish1 = Carbon::parse($request->finish)->format('H:i:s');
+        if($train['judul_training'] != $request->judul_training ){
+            $name=$train['judul_training'];
+            $log = new activitylog();
+            $log->nama_user = Auth::user()->info_kary->nama_kary;
+            $log->dept = Auth::user()->info_kary->data_positions->department;
+            $log->roles = Auth::user()->roles;
+            $log->action = "Edit Training";
+            $log->description = "Change title of training($id) from '$name' to '$request->judul_training'";
+            $log->save();
+        }
+        if($train['judul_training'] != $request->judul_training ){
+            $tname=$request->judul_training;
+        } else {
+            $tname=$train['judul_training'];
+        }
+        if($train['speaker'] != $request->speaker ){
+            $name=$train['speaker'];
+            $log = new activitylog();
+            $log->nama_user = Auth::user()->info_kary->nama_kary;
+            $log->dept = Auth::user()->info_kary->data_positions->department;
+            $log->roles = Auth::user()->roles;
+            $log->action = "Edit Training";
+            $log->description = "Change speaker($id)($tname) from '$name' to '$request->speaker'";
+            $log->save();
+        }
+        if($train['tgl_train'] != $request->tgl_train ){
+            $name=Carbon::parse($train['tgl_train'])->format('d F Y');
+            $log = new activitylog();
+            $log->nama_user = Auth::user()->info_kary->nama_kary;
+            $log->dept = Auth::user()->info_kary->data_positions->department;
+            $log->roles = Auth::user()->roles;
+            $log->action = "Edit Training";
+            $log->description = "Change date of training($id)($tname) from '$name' to '$datetrain'";
+            $log->save();
+        }
+        if($train['start'] != $start ){
+            $name=Carbon::parse($train['start'])->format('H:i:s');
+            $log = new activitylog();
+            $log->nama_user = Auth::user()->info_kary->nama_kary;
+            $log->dept = Auth::user()->info_kary->data_positions->department;
+            $log->roles = Auth::user()->roles;
+            $log->action = "Edit Training";
+            $log->description = "Change start time($id)($tname) from '$name' to '$start1'";
+            $log->save();
+        }
+        if($train['finish'] != $finish ){
+            $name=Carbon::parse($train['finish'])->format('H:i:s');
+            $log = new activitylog();
+            $log->nama_user = Auth::user()->info_kary->nama_kary;
+            $log->dept = Auth::user()->info_kary->data_positions->department;
+            $log->roles = Auth::user()->roles;
+            $log->action = "Edit Training";
+            $log->description = "Change finish time($id)($tname) from '$name' to '$finish1'";
+            $log->save();
+        }
         $item=Training::findorfail($id);
 
         $item->update($data);

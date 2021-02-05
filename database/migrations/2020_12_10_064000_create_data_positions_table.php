@@ -13,16 +13,16 @@ class CreateDataPositionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_positions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name_position');
-            $table->string('level');
-            $table->string('department');
-            $table->integer('basic_salary');
-            $table->string('remark');
-            $table->softDeletes();
-            $table->timestamps();
-        });
+        // Schema::create('data_positions', function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->string('name_position');
+        //     $table->string('level');
+        //     $table->string('department');
+        //     $table->integer('basic_salary');
+        //     $table->string('remark');
+        //     $table->softDeletes();
+        //     $table->timestamps();
+        // });
 
         // Schema::table('data_positions', function (Blueprint $table) {
         // $table->string('department')->after('name_position');

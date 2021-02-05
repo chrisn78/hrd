@@ -5,7 +5,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Ubah Data Jabatan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Edit Data Position</h1>
           </div>
 
          @if (count($errors) > 0)
@@ -24,7 +24,7 @@
                     @method('PUT')
                     @csrf
                     <div class="form-group">
-                        <label for="location">Pilih Department</label>
+                        <label for="location" style="font-weight: bolder">Choose Department</label>
                         <select name="department" required class="form-control">
                             <option value="Front Office" {{$item->department == "Front Office" ? 'selected="selected"' : '' }}>Front Office</option>
                             <option value="Human Resource" {{ $item->department == "Human Resource" ? 'selected="selected"' : '' }}>Human Resource</option>
@@ -40,11 +40,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="title">Nama Posisi</label>
+                        <label for="title" style="font-weight: bolder">Position</label>
                         <input type="text" class="form-control" name="name_position" value="{{ $item->name_position}}">
                     </div>
                     <div class="form-group">
-                        <label for="location">Pilih Level</label>
+                        <label for="location" style="font-weight: bolder">Choose Level</label>
                         <select name="level" required class="form-control">
                             <option value="Level I" {{ $item->level == "Level I" ? 'selected="selected"' : '' }}>Level I General Manager</option>
                             <option value="Level II" {{ $item->level == "Level II" ? 'selected="selected"' : '' }}>Level II Manager</option>
@@ -56,11 +56,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="base_salary"> Base Salary </label>
+                        <label for="base_salary" style="font-weight: bolder"> Base Salary </label>
                         <input type="text" class="form-control" name="basic_salary" value="{{ $item->basic_salary}}">
                     </div>
                     <div class="form-group">
-                        <label for="remark">Remark</label>
+                        <label for="remark" style="font-weight: bolder">Remark</label>
                         <input type="text" class="form-control" name="remark" value="{{ $item->remark}}">
                     </div>
                     <div class="form-group">

@@ -26,20 +26,27 @@ class karyawan extends Model
             'anak',
             'pendidikan',
             'no_hp',
+            'no_hp1',
             'no_rek',
             'npwp',
             'bpjskes',
             'bpjstk',
             'status_posisi',
-            'remarks'
+            'remark'
     ];
 
     protected $hidden = [];
     public function data_positions(){
-        return $this->belongsTo(Position::class,'id_position','id');
+        return $this->belongsTo('App\position', 'id_position');
     }
     public function training()
     {
         return $this->belongsToMany(training::class);
+    }
+    public function data_violation(){
+        return $this->hasMany(violation::class,'id_kary','id');
+    }
+    public function data_user(){
+        return $this->hasOne(User::class,'id_kary','id');
     }
 }

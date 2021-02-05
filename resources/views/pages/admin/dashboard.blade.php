@@ -9,6 +9,125 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
           </div>
+          <div class="row">
+               <!-- Birthday Card -->
+              <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-white shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text font-weight-bold text-primary text-uppercase mb-1">Upcoming Birthday Next 7 Days</div>
+                       <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="text-center thead-dark align-middle">
+                            <tr>
+                            <th>No.</th>
+                            <th>Nama User</th>
+                            <th>Department</th>
+                            <th>Birthday</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-self-left">
+                            @forelse($ultah as $key => $ultah)
+                            <tr>
+                            <td>{{ $key+1}}</td>
+                            <td>{{ $ultah->nama_kary}}</td>
+                            <td>{{ $ultah->data_positions->department}}</td>
+                            <td>{{ date('d F', strtotime($ultah->tgl_lahir))}}</td>
+                            </tr>
+                            @empty
+                                    <tr>
+                                        <td colspan='4' class="text-center">
+                                            Empty Data
+                                        </td>
+                                    </tr>
+                                    @endforelse
+                        </tbody>
+                        </table>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <!-- Login Log Card -->
+            {{-- <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-white shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text font-weight-bold text-primary text-uppercase mb-1">Last Login</div>
+                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="text-center thead-dark align-middle">
+                            <tr>
+                            <th>No.</th>
+                            <th>Nama User</th>
+                            <th>Department</th>
+                            <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-self-left">
+                            @forelse($ultah as $key => $ultah)
+                            <tr>
+                            <td>{{ $key+1}}</td>
+                            <td>{{ $ultah->nama_kary}}</td>
+                            <td>{{ $ultah->data_positions->department}}</td>
+                            <td>{{ date('d F', strtotime($ultah->tgl_lahir))}}</td>
+                            </tr>
+                            @empty
+                                    <tr>
+                                        <td colspan='7' class="text-center">
+                                            Data Kosong
+                                        </td>
+                                    </tr>
+                                    @endforelse
+                        </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> --}}
+             <!-- Activity Log Card -->
+            {{-- <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-white shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text font-weight-bold text-primary text-uppercase mb-1">Last Activity</div>
+                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="text-center thead-dark align-middle">
+                            <tr>
+                            <th>No.</th>
+                            <th>Nama User</th>
+                            <th>Department</th>
+                            <th>Action</th>
+                            <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-self-left">
+                            @forelse($ultah as $key => $ultah)
+                            <tr>
+                            <td>{{ $key+1}}</td>
+                            <td>{{ $ultah->nama_kary}}</td>
+                            <td>{{ $ultah->data_positions->department}}</td>
+                            <td>{{ date('d F', strtotime($ultah->tgl_lahir))}}</td>
+                            </tr>
+                            @empty
+                                    <tr>
+                                        <td colspan='7' class="text-center">
+                                            Data Kosong
+                                        </td>
+                                    </tr>
+                                    @endforelse
+                        </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> --}}
+          </div>
            <div class="row">
 
             <div class="col-xl-3 col-md-6 mb-4">
@@ -457,7 +576,7 @@
 
         <!-- Area Summary Total By Masa Kerja -->
         <div class="row">
-            <div class="col-xl col-lg">
+            <div class="col-xl col-lg col-md">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -477,7 +596,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk01}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fa fa-key fa-2x text-gray-500"></i>
+                                <i class="fa fa-clock fa-2x text-gray-500"></i>
                                 </div>
                             </div>
                             </div>
@@ -493,7 +612,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk12}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fas fa-cocktail fa-2x text-gray-500" aria-hidden="true"></i>
+                                <i class="fas fa-clock fa-2x text-gray-500" aria-hidden="true"></i>
                                 </div>
                             </div>
                             </div>
@@ -510,7 +629,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk23}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fas fa-hamburger fa-2x text-gray-500"></i>
+                                <i class="fas fa-clock fa-2x text-gray-500"></i>
                                 </div>
                             </div>
                             </div>
@@ -527,7 +646,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk34}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fas fa-balance-scale fa-2x text-gray-500"></i>
+                                <i class="fas fa-clock fa-2x text-gray-500"></i>
                                 </div>
                             </div>
                             </div>
@@ -544,7 +663,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk45}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fas fa-users-cog fa-2x text-gray-500"></i>
+                                <i class="fas fa-clock fa-2x text-gray-500"></i>
                                 </div>
                             </div>
                             </div>
@@ -561,7 +680,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{$mk5}}</div>
                                 </div>
                                 <div class="col-auto">
-                                <i class="fas fa-cogs fa-2x text-gray-500"></i>
+                                <i class="fas fa-clock fa-2x text-gray-500"></i>
                                 </div>
                             </div>
                             </div>
@@ -593,10 +712,10 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
-                  <div class="col-xl-8 col-lg-7">
+                  <div class="col-xl-7 col-lg-7">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                            <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -612,7 +731,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -630,7 +749,7 @@
                         </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-lg-7">
+                  <div class="col-xl-5 col-lg-7">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div id="genderchart"  style="width: 300px; height:300px;"></div>
@@ -649,10 +768,10 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
-                  <div class="col-xl-8 col-lg-7">
+                  <div class="col-xl-7 col-lg-7">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                            <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -667,7 +786,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -685,7 +804,7 @@
                         </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-lg-7">
+                  <div class="col-xl-5 col-lg-7">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div id="postchart"  style="width: 300px; height:300px;"></div>
@@ -707,10 +826,10 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
-                  <div class="col-xl-8 col-lg-7">
+                  <div class="col-xl-7 col-lg-7">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                            <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -726,7 +845,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -741,7 +860,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -756,7 +875,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -771,7 +890,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -786,7 +905,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -801,7 +920,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -816,7 +935,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -836,7 +955,7 @@
                         </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-lg-7">
+                  <div class="col-xl-5 col-lg-7">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div id="educhart"  style="width: 250px; height:300px;"></div>
@@ -855,10 +974,10 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
-                  <div class="col-xl-8 col-lg-7">
+                  <div class="col-xl-7 col-lg-7">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                            <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -874,7 +993,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -889,7 +1008,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -904,7 +1023,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -919,7 +1038,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -938,7 +1057,7 @@
                         </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-lg-7">
+                  <div class="col-xl-5 col-lg-7">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div id="relchart"  style="width: 300px; height:300px;"></div>
@@ -959,10 +1078,10 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
-                  <div class="col-xl-8 col-lg-7">
+                  <div class="col-xl-7 col-lg-7">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                            <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                 <div class="card border-left-danger shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
@@ -978,7 +1097,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-danger shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -993,7 +1112,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-danger shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1008,7 +1127,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-danger shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1023,7 +1142,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-danger shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1038,7 +1157,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-danger shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1053,7 +1172,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-danger shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1071,7 +1190,7 @@
                         </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-lg-7">
+                  <div class="col-xl-5 col-lg-7">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div id="bloodchart"  style="width: 300px; height:300px;"></div>
@@ -1090,15 +1209,15 @@
                 </div>
                 <!-- Card Body -->
                 <div class="row">
-                  <div class="col-xl-8 col-lg-7">
+                  <div class="col-xl-7 col-lg-7">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                            <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
-                                                    <div class="text font-weight-bold text-success text-uppercase mb-1">Single</div>
+                                                    <div class="text font-weight-bold text-success text-uppercase mb-1" >Single</div>
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{$single}}</div>
                                                 </div>
                                                 <div class="col-auto">
@@ -1109,7 +1228,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1124,7 +1243,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1139,7 +1258,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1154,7 +1273,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1169,7 +1288,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-1" style="height: 150px;">
+                                <div class="col-xl-6 col-md-6 mb-1" style="height: 100px;">
                                     <div class="card border-left-info shadow h-100 py-2">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
@@ -1188,7 +1307,7 @@
                         </div>
                     </div>
                   </div>
-                  <div class="col-xl-4 col-lg-7">
+                  <div class="col-xl-5 col-lg-7">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div id="marrchart"  style="width: 300px; height:300px;"></div>
@@ -1271,7 +1390,7 @@
         ]);
 
         var options = {'title': '% Total By Gender',
-               'width': 250,
+              'width': 300,
                'height': 300,
                'chartArea': {'width': '100%', 'height': '80%'},
                'legend': {'position': 'bottom'}
@@ -1292,7 +1411,7 @@
         ]);
 
         var options = {'title': '% Total By Position Status',
-               'width': 250,
+               'width': 300,
                'height': 300,
                'chartArea': {'width': '100%', 'height': '80%'},
                'legend': {'position': 'bottom'}
@@ -1319,7 +1438,7 @@
         ]);
 
         var options = {'title': '% Total By Education',
-               'width': 250,
+               'width': 300,
                'height': 300,
                'chartArea': {'width': '100%', 'height': '80%'},
                'legend': {'position': 'bottom'}
@@ -1343,7 +1462,7 @@
         ]);
 
         var options = {'title': '% Total By Religion',
-               'width': 250,
+               'width': 300,
                'height': 300,
                'chartArea': {'width': '100%', 'height': '80%'},
                'legend': {'position': 'bottom'}
@@ -1369,7 +1488,7 @@
         ]);
 
         var options = {'title': '% Total By Blood Type',
-               'width': 250,
+               'width': 300,
                'height': 300,
                'chartArea': {'width': '100%', 'height': '80%'},
                'legend': {'position': 'bottom'}
@@ -1394,7 +1513,7 @@
         ]);
 
         var options = {'title': '% Total By Marriage Status',
-               'width': 250,
+               'width': 300,
                'height': 300,
                'chartArea': {'width': '100%', 'height': '80%'},
                'legend': {'position': 'bottom'}

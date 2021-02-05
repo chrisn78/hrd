@@ -18,7 +18,7 @@ class DataTrainingImport implements ToModel
         $start= Carbon::parse(($row[3]- 25569) * 86400)->format('H:i');
         $finish = Carbon::parse(($row[4]- 25569) * 86400)->format('H:i');
         $duration = Carbon::parse(($row[5]- 25569) * 86400)->format('H:i');
-        // dd($row[6]);
+        // dd($row[0]);
         // dd($lhr);
         return new training([
             'judul_training' => $row[0],

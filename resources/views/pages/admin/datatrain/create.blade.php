@@ -5,7 +5,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Data Training</h1>
+            <h1 class="h3 mb-0 text-gray-800">Add Data Training</h1>
             <div>
                     <a href="{{ route('data_train.index') }}">
                         <button class="btn btn-danger btn_block">Kembali</button>
@@ -28,30 +28,37 @@
                 <form action="{{ route('data_train.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="title">Judul Training</label>
+                        <label for="title" style="font-weight: bolder">Title of Training</label>
                         <input type="text" class="form-control" name="judul_training" value="{{ old('name_position')}}">
                     </div>
                     <div class="form-group">
-                        <label for="base_salary"> Speaker </label>
+                        <label for="base_salary" style="font-weight: bolder"> Speaker </label>
                         <input type="text" class="form-control" name="speaker" value="{{ old('speaker')}}">
                     </div>
                     <div class="form-group">
-                        <label for="base_salary"> Tanggal Training </label>
+                        <label for="base_salary" style="font-weight: bolder"> Date of Training </label>
                         <input type="date" class="form-control" name="tgl_train" value="{{ old('tgl_train')}}">
                     </div>
                     <div class="form-group">
-                        <label for="remark">Start</label>
+                        <label for="remark" style="font-weight: bolder">Start</label>
                         <input type="time" class="form-control" name="start" value="{{ old('remark')}}">
                     </div>
                     <div class="form-group">
-                        <label for="remark">Finish</label>
+                        <label for="remark" style="font-weight: bolder">Finish</label>
                         <input type="time" class="form-control" name="finish" value="{{ old('remark')}}">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-block">Save & Add</button>
-                    </div>
-                    <div class="form-group">
-                        <button type="reset" class="btn btn-primary btn-block">Reset</button>
+                        <div class="row">
+                           <div class="col-4">
+                               <button type="submit" class="btn btn-primary btn-block" name="button" value="exit">Save & Exit</button>
+                           </div>
+                           <div class="col-4">
+                                <button type="submit" class="btn btn-success btn-block" name="button" value="add">Save & Add Again</button>
+                           </div>
+                           <div class="col-4">
+                                <button type="reset" class="btn btn-secondary btn-block">Reset</button>
+                           </div>
+                        </div>
                     </div>
                 </form>
               </div>

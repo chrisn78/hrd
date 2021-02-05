@@ -28,39 +28,86 @@
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
+      @if (Auth::user()->roles != "worker")
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-users"></i>
-          <span>Data Karyawan</span>
+          <span>Data Workers</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('data_kary.index')}}">Karyawan (Active)</a>
-            <a class="collapse-item" href="{{ route('kary_deactive.index')}}">Karyawan (Deactive)</a>
-            <a class="collapse-item" href="{{ route('data-jab.index')}}">Data Jabatan</a>
+            <a class="collapse-item" href="{{ route('data_kary.index')}}">Active Workers</a>
+            <a class="collapse-item" href="{{ route('kary_deactive.index')}}">Deactive Workers</a>
           </div>
         </div>
       </li>
+      @endif
 
+       <!-- Nav Item - Utilities Collapse Menu -->
+       @if (Auth::user()->roles != "worker" && Auth::user()->roles != "hr")
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('data-jab.index')}}">
+          <i class="fas fa-fw fa-briefcase"></i>
+          <span>Data Positions</span></a>
+      </li>
+      @endif
+      <!-- Nav Item - Utilities Collapse Menu -->
+      @if (Auth::user()->roles != "worker")
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('data_train.index')}}">
+          <i class="fas fa-fw fa-university"></i>
+          <span>Data Trainings</span></a>
+      </li>
+      @endif
+
+      <!-- Nav Item - Data User -->
+      @if (Auth::user()->roles == "admin" || Auth::user()->roles == "gm" || Auth::user()->roles == "manager" || Auth::user()->roles == "ca")
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-university"></i>
-          <span>Data Training</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-gavel"></i>
+          <span>Data Violations</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('data_train.index')}}">List Data Training</a>
+            <a class="collapse-item" href="{{ route('type_violation.index')}}">List Violation</a>
+            <a class="collapse-item" href="{{ route('violation.index')}}">Worker Violation</a>
           </div>
         </div>
       </li>
+      @endif
 
-         <!-- Nav Item - Data User -->
+      <!-- Nav Item - Data User -->
+      @if (Auth::user()->roles == "admin")
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('data_user.index')}}">
           <i class="fas fa-fw fa-lock"></i>
-          <span>Data User</span></a>
+          <span>Data Users</span></a>
       </li>
+      @endif
+
+      @if (Auth::user()->roles == "worker")
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('profile_kary.index')}}">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Your Profile</span></a>
+      </li>
+      @endif
+      @if (Auth::user()->roles == "admin" || Auth::user()->roles == "gm" )
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-gavel"></i>
+          <span>Data Logs</span>
+        </a>
+        <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="{{ route('loginlog')}}">Login Log</a>
+            <a class="collapse-item" href="{{ route('activitylog')}}">Activity Log</a>
+          </div>
+        </div>
+      </li>
+      @endif
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

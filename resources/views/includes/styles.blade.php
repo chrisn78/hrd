@@ -5,6 +5,4 @@
   <!-- Custom styles for this template-->
   <link href="{{ url('backend/css/sb-admin-2.css')}}" rel="stylesheet">
 
-  <!-- Custom styles for this page -->
-  <link href="'{{ url('vendor/datatables/dataTables.bootstrap4.min.css')}}'" rel="stylesheet">
 

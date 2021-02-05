@@ -13,17 +13,17 @@ class CreateDataTrainingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_trainings', function (Blueprint $table) {
-             $table->bigIncrements('id');
-            $table->string('judul_training');
-            $table->string('speaker');
-            $table->string('tgl_train');
-            $table->time('start');
-            $table->time('finish');
-            $table->time('duration');
-            $table->softDeletes();
-            $table->timestamps();
-        });
+        // Schema::create('data_trainings', function (Blueprint $table) {
+        //      $table->bigIncrements('id');
+        //     $table->string('judul_training');
+        //     $table->string('speaker');
+        //     $table->string('tgl_train');
+        //     $table->time('start');
+        //     $table->time('finish');
+        //     $table->time('duration');
+        //     $table->softDeletes();
+        //     $table->timestamps();
+        // });
     }
 
     /**

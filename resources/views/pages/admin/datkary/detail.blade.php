@@ -15,167 +15,298 @@
 
           <div class="card shadow">
               <div class="row card-body">
-                  <div class="col-6">
-                    <table style="width:auto" class="table table-bordered">
-                        <tr>
-                            <th colspan="3">
-                                <div class="card-header py-3 d-flex justify-content-between">
-                                    <h4 class="m-0 font-weight-bold text-primary">Profile Karyawan ({{ $item->nama_kary }})</h4>
+                  <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-3 mb-3" >
+                            <h5 style="font-weight: bold">Employee Profile</h5>
+                            <div class="card" style="margin-top: 20px">
+                                <div class="card-body">
+                                <div class="d-flex flex-column align-items-center text-center">
+                                    <img src="{{ Storage::url($item->image)}}" alt="Admin" class="img-thumbnail" width="500">
+                                    <div class="mt-3">
+                                    <h4 style="font-weight: bolder">{{ $item->nama_kary }}</h4>
+                                    <p class="text-dark mb-1">{{ $item->data_positions->name_position}}</p>
+                                    <p class="text-dark font-size-sm">{{ $item->data_positions->level}}</p>
+                                    <p class="text-dark font-size-sm">Department Of {{ $item->data_positions->department}}</p>
+                                    <p class="text-dark font-size-sm">Position Status : {{ $item->status_posisi}}</p>
+                                    </div>
                                 </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th rowspan="21" style="vertical-align: top">
-                                <img src="{{ Storage::url($item->image)}}" alt="" width="400px"
-                                class="img-thumbnail center" align="center">
-                            </th>
-                            <td>NIK Karyawan</td>
-                            <td>{{ $item->nik }}</td>
-                        </tr>
-                        <tr>
-                            <td>No. Payroll</td>
-                            <td>{{ $item->no_payroll }}</td>
-                        </tr>
-                        <tr>
-                            <td>Nama Karyawan</td>
-                            <td>{{ $item->nama_kary }}</td>
-                        </tr>
-                        <tr>
-                            <td>Posisi/Level</td>
-                            <td>{{ $item->data_positions->name_position}} | {{ $item->data_positions->level}}</td>
-                        </tr>
-                        <tr>
-                            <td>Basic Salary</td>
-                            <td>{{ number_format($item->data_positions->basic_salary)}}</td>
-                        </tr>
-                        <tr>
-                            <td>Departemen</td>
-                            <td>{{ $item->data_positions->department}}</td>
-                        </tr>
-                        <tr>
-                            <td>Join Date</td>
-                            <td>{{ date('d-m-Y', strtotime($item->join_date))}}</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat</td>
-                            <td>{{ $item->alamat }}</td>
-                        </tr>
-                        <tr>
-                            <td>TTL</td>
-                            <td>{{ $item->tempat_lahir}}, {{ date('d-m-Y', strtotime($item->tgl_lahir))}}</td>
-                        </tr>
-                        <tr>
-                            <td>Agama</td>
-                            <td>{{ $item->agama }}</td>
-                        </tr>
-                        <tr>
-                            <td>Gender/Gol.Darah/Status Pernikahan</td>
-                            <td>{{ $item->jenis_kel }} / {{ $item->gol_darah }} / {{ $item->status }}</td>
-                        </tr>
-                        @if(($item->jenis_kel) == "MALE")
-                         <tr>
-                            <td>Nama Istri</td>
-                            <td>{{ $item->istri }}</td>
-                        </tr>
-                        @else
-                        <tr>
-                            <td>Nama Suami</td>
-                            <td>{{ $item->istri }}</td>
-                        </tr>
-                        @endif
-                         <tr>
-                            <td>Nama Anak</td>
-                            <td>{{ $item->anak }}</td>
-                        </tr>
-                        <tr>
-                            <td>Pendidikan</td>
-                            <td>{{ $item->pendidikan }}</td>
-                        </tr>
-                        <tr>
-                            <td>No. Handphone</td>
-                            <td>{{ $item->no_hp }}</td>
-                        </tr>
-                        <tr>
-                            <td>No Rekening BCA</td>
-                            <td>{{ $item->no_rek }}</td>
-                        </tr>
-                        <tr>
-                            <td>NPWP</td>
-                            <td>{{ $item->npwp }}</td>
-                        </tr>
-                        <tr>
-                            <td>BPJS Kesehatan</td>
-                            <td>{{ $item->bpjskes }}</td>
-                        </tr>
-                        <tr>
-                            <td>BPJS Ketenagakerjaan</td>
-                            <td>{{ $item->bpjstk }}</td>
-                        </tr>
-                        <tr>
-                            <td>Status Kerja</td>
-                            <td>{{ $item->status_posisi }}</td>
-                        </tr>
-                        <tr>
-                            <td>Keterangan</td>
-                            <td>{{ $item->remarks }}</td>
-                        </tr>
-                    </table>
-                  </div>
-                  <div class="col-6">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                <th colspan="7">
-                                <div class="card-header py-3 d-flex justify-content-between">
-                                    <h4 class="m-0 font-weight-bold text-primary">Training Yang Diikuti</h4>
                                 </div>
-                                </th>
-                                </tr>
-                                <tr>
-                                <th>No.</th>
-                                <th>Judul Training</th>
-                                <th>Speaker</th>
-                                <th>Tanggal Training</th>
-                                <th>Start</th>
-                                <th>Finish</th>
-                                <th>Durasi Training</th>
-                                </tr>
-                            </thead>
-                            <tbody class="align-self-left">
-                                @forelse($item->training as $key => $training)
-                                    <tr>
-                                    <td>{{$key+1}}</td>
-                                    <td>{{ $training->judul_training}}</td>
-                                    <td>{{ $training->speaker}}</td>
-                                    <td>{{ date('d F Y', strtotime($training->tgl_train))}}</td>
-                                    <td>{{ \Carbon\Carbon::parse($training->start)->format('H:i')}}</td>
-                                    <td>{{ \Carbon\Carbon::parse($training->finish)->format('H:i')}}</td>
-                                    <td>{{ \Carbon\Carbon::parse($training->duration)->format('H:i')}}</td>
-                                    </tr>
-                                @empty
-                                        <tr>
-                                            <td colspan='8' class="text-center">
-                                                Data Kosong
-                                            </td>
-                                        </tr>
-                                        @endforelse
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th colspan="6" style="text-align:right">Total Hours:</th>
-                                    <th></th>
-                                </tr>
-                            </tfoot>
-                        </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-3" style="margin-top: 45px">
+                                <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">NIK</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->nik }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">No. Payroll</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->no_payroll }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Full Name</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->nama_kary }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Basic Salary</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    @if(Auth::user()->roles == "admin" || Auth::user()->roles == "gm" || Auth::user()->roles == "ca")
+                                    {{ number_format($item->data_positions->basic_salary)}}
+                                    @elseif (Auth::user()->info_kary->id == $item->id)
+                                    {{ number_format($item->data_positions->basic_salary)}}
+                                     @endif
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Join Date</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ date('d-m-Y', strtotime($item->join_date))}}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Address</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->alamat }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">TTL</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->tempat_lahir}}, {{ date('d-m-Y', strtotime($item->tgl_lahir))}}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Religion</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->agama }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Gender/Blood Type/Marriage Status</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->jenis_kel }} / {{ $item->gol_darah }} / {{ $item->status }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    @if(($item->jenis_kel) == "MALE")
+                                    <h6 class="mb-0">Name of Wife</h6>
+                                    @else
+                                    <h6 class="mb-0">Name of Husband</h6>
+                                    @endif
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->istri }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Name of Children</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->anak }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">Education</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->pendidikan }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">No. Handphone</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->no_hp }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">No. Contact Emergency</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->no_hp1 }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">No. BCA Account</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->no_rek }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">NPWP</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->npwp }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">BPJS Kesehatan</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->bpjskes }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                    <h6 class="mb-0">BPJS Ketenagakerjaan</h6>
+                                    </div>
+                                    <div class="col-sm-7 text-dark">
+                                    {{ $item->bpjstk }}
+                                    </div>
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead >
+                                                <tr>
+                                                <th colspan="7">
+                                                    <h5 class="m-0 font-weight-bold text-primary">Training that has been attended</h5>
+                                                </th>
+                                                </tr>
+                                                <tr>
+                                                <th>No.</th>
+                                                <th>Title of Training</th>
+                                                <th>Speaker</th>
+                                                <th>Date Of Training</th>
+                                                <th>Start</th>
+                                                <th>Finish</th>
+                                                <th>Duration</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="align-self-left">
+                                                @forelse($item->training as $key => $training)
+                                                    <tr>
+                                                    <td>{{$key+1}}</td>
+                                                    <td>{{ $training->judul_training}}</td>
+                                                    <td>{{ $training->speaker}}</td>
+                                                    <td>{{ date('d F Y', strtotime($training->tgl_train))}}</td>
+                                                    <td>{{ \Carbon\Carbon::parse($training->start)->format('H:i')}}</td>
+                                                    <td>{{ \Carbon\Carbon::parse($training->finish)->format('H:i')}}</td>
+                                                    <td>{{ \Carbon\Carbon::parse($training->duration)->format('H:i')}}</td>
+                                                    </tr>
+                                                @empty
+                                                        <tr>
+                                                            <td colspan='8' class="text-center">
+                                                                Empty Data
+                                                            </td>
+                                                        </tr>
+                                                        @endforelse
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="6" style="text-align:right">Total Hours:</th>
+                                                    <th></th>
+                                                </tr>
+                                            </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" width="100%" cellspacing="0" style="margin-top:30px">
+                                            <thead>
+                                                <tr>
+                                                <th colspan="7">
+                                                    <h5 class="m-0 font-weight-bold text-danger">Violation that have been committed</h5>
+                                                </th>
+                                                </tr>
+                                                <tr>
+                                                <th>No.</th>
+                                                <th>Date Of SP</th>
+                                                <th>SP Category</th>
+                                                <th>Name of Violation</th>
+                                                <th>Detail</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="align-self-left">
+                                                @forelse($items as $key => $violation)
+                                                    <tr>
+                                                    <td>{{$key+1}}</td>
+                                                    <td>{{ date('d F Y', strtotime($violation->tgl_sp))}}</td>
+                                                    <td>{{ $violation->category}}</td>
+                                                    <td>{{ $violation->nama_sp}}</td>
+                                                    <td>{{ $violation->detail_sp}}</td>
+                                                    </tr>
+                                                @empty
+                                                        <tr>
+                                                            <td colspan='6' class="text-center">
+                                                                Empty Data
+                                                            </td>
+                                                        </tr>
+                                                @endforelse
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                  </div>
                   <div class="card-body">
-                        <div class="card-header d-flex justify-content-center">
+                        <div class="card-header d-flex justify-content-center" style="background-color: #eaecf0">
                                     <a href="{{ route('data_kary.index')}}" class="btn btn-primary">
                                             <span class="icon text-white">
                                             <i class="fas fa-times"></i>
                                             </span>
                                             &nbsp;
-                                            <span class="text-*-center">close</span>
+                                            <span class="text-*-center">Back</span>
                                     </a>
                         </div>
                   </div>
@@ -192,6 +323,7 @@
        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/plug-ins/1.10.22/api/sum().js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js"></script>
         <script>
                     $(document).ready( function () {
                         $('#dataTable').DataTable( {
@@ -208,7 +340,7 @@
                         // Update footer Column "quantita"
                                 // Update footer
                                 $( api.column( 6 ).footer() ).html(
-                                    moment.utc(pageTotal_Duration).format("HH:mm") + ' ( Total All : '+ moment.utc(total_Duration).format("HH:mm") + ' )'
+                                    moment.utc(pageTotal_Duration).format("HH:mm") + ' ( Total All : '+ moment.duration(total_Duration).format("HH:mm") + ' )'
                                     );
                                 }
 

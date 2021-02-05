@@ -21,30 +21,25 @@
 
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
-              <h3 class="m-0 font-weight-bold text-primary">Data Jabatan</h3>
-            <div>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#importExcel">
-                    <span class="icon text-white">
-                      <i class="fas fa-file-import"></i>
-                    </span>
-                    &nbsp;
-                    <span class="text-*-center">Import Excel Data</span>
-                </button>
-                <a href="{{ route('post_export')}}" class="btn btn-success">
-                    <span class="icon text-white">
-                      <i class="fas fa-file-export"></i>
-                    </span>
-                    &nbsp;
-                    <span class="text-*-center">Export to Excel</span>
-                  </a>
-                  <a href="{{ route('data-jab.create')}}" class="btn btn-primary">
-                    <span class="icon text-white">
-                      <i class="fas fa-plus"></i>
-                    </span>
-                    &nbsp;
-                    <span class="text-*-center">Add Data Position</span>
-                  </a>
-            </div>
+              <h3 class="m-0 font-weight-bold text-primary">Data Positions</h3>
+              @if(Auth::user()->roles == "admin")
+                <div>
+                       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#importExcel">
+                            <span class="icon text-white">
+                            <i class="fas fa-file-import"></i>
+                            </span>
+                            &nbsp;
+                            <span class="text-*-center">Import Data Position</span>
+                        </button>
+                    <a href="{{ route('data-jab.create')}}" class="btn btn-primary">
+                        <span class="icon text-white">
+                        <i class="fas fa-plus"></i>
+                        </span>
+                        &nbsp;
+                        <span class="text-*-center">Add Position</span>
+                    </a>
+                </div>
+                @endif
             </div>
 
             <!-- Import Excel -->
@@ -79,37 +74,45 @@
                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                   <thead class="text-center thead-dark align-middle">
                     <tr>
-                      <th>No.</th>
-                      <th>Position Name</th>
-                      <th>Position Level</th>
+                      <th class="text-center">ID.</th>
+                      <th>Position</th>
+                      <th>Level</th>
                       <th>Department</th>
+                      @if(Auth::user()->roles != "hr" && Auth::user()->roles != "manager")
                       <th>Basic Salary</th>
+                      @endif
                       <th>Remarks</th>
+                      @if(Auth::user()->roles == "admin")
                       <th class="text-center">Action</th>
+                      @endif
                     </tr>
                   </thead>
                   <tbody class="align-self-left">
                       @forelse($items as $key => $items)
                     <tr>
-                      <td>{{ $key+1}}</td>
+                      <td>{{ $items->id}}</td>
                       <td>{{ $items->name_position}}</td>
                       <td>{{ $items->level}}</td>
                       <td>{{ $items->department}}</td>
+                      @if(Auth::user()->roles != "hr" && Auth::user()->roles != "manager")
                       <td>{{ $items->basic_salary}}</td>
+                      @endif
                       <td>{{ $items->remark}}</td>
+                      @if(Auth::user()->roles == "admin")
                       <td align="center">
                             <a href="{{ route('data-jab.edit',$items->id)}}" class="btn btn-info">
                                 <i class="fa fa-pencil-alt"></i>
                             </a>
-                                <form action="{{ route('data-jab.destroy',$items->id)}}" method="POST"
+                                {{-- <form action="{{ route('data-jab.destroy',$items->id)}}" method="POST"
                                     class="d-inline">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </button>
-                                </form>
+                                </form> --}}
                         </td>
+                        @endif
                     </tr>
                     @empty
                               <tr>
@@ -119,12 +122,14 @@
                               </tr>
                               @endforelse
                   </tbody>
-                  <tfoot>
-            <tr>
-                <th colspan="4" style="text-align:right">Total:</th>
-                <th></th>
-            </tr>
-        </tfoot>
+                  @if(Auth::user()->roles != "hr" && Auth::user()->roles != "manager")
+                    <tfoot>
+                        <tr>
+                            <th colspan="4" style="text-align:right">Total:</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    @endif
                 </table>
               </div>
             </div>
@@ -149,11 +154,11 @@
 
                         // Remove the formatting to get integer data for summation
                         var intVal = function ( i ) {
-                return typeof i === 'string' ?
-                    i.replace(/[\$,]/g, '')*1 :
-                    typeof i === 'number' ?
-                        i : 0;
-            };
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                        };
 
             // Total over all pages
             total = api

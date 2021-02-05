@@ -17,7 +17,7 @@ class KaryawanExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     */
     public function collection()
     {
-        return karyawan::all();
+        return Karyawan::with(['data_positions'])->get();
     }
      public function headings(): array
     {
@@ -40,6 +40,7 @@ class KaryawanExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
             'Nama Anak',
             'Pendidikan',
             'No HP',
+            'No Emergency',
             'No Rek BCA',
             'NPWP',
             'BPJS Kes',

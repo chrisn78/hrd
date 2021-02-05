@@ -14,7 +14,7 @@
   <!-- Custom fonts for this template--> <!-- Custom styles for this template-->
   @stack('prepend-style')
   @include('includes.styles')
-
+  @stack('addon-style')
 
 </head>
 
